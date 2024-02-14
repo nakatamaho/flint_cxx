@@ -62,8 +62,8 @@ RUN echo "\n\
 " > /home/$DOCKER_USER/.gitconfig
 SHELL ["/bin/bash", "-c"]
 
-RUN cd ${WORK} && git clone https://github.com/nakatamaho/flintcxx.gxx
-RUN cd ${WORK}/flintcxx && git remote set-url origin git@github.com:nakatamaho/flintcxx.gxx
+RUN cd ${WORK} && git clone https://github.com/nakatamaho/flintcxx.git
+RUN cd ${WORK}/flintcxx && git remote set-url origin git@github.com:nakatamaho/flintcxx.git
 RUN cd ${WORK}/flintcxx/setup && bash -x setup_gmp.sh && bash -x setup_mpfr.sh && bash -x setup_flint.sh  
 RUN cd ${WORK}/flintcxx/ && make
 
