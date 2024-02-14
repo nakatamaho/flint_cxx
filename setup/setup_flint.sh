@@ -5,8 +5,8 @@ export CC=gcc-12
 export CXX=g++-12
 export CFLAGS="-Wall -O3 -march=zen2"
 
-WRKDIR=/home/docker/mpfrcxx/setup/work_mpc
-ARCHIVEDIR=/home/docker/mpfrcxx/archives/
+WRKDIR=/home/docker/flintcxx/setup/work_mpc
+ARCHIVEDIR=/home/docker/flintcxx/archives/
 
 rm -rf $WRKDIR
 mkdir -p $WRKDIR
@@ -17,9 +17,9 @@ cd mpc-${VERSION}
     --enable-assert                                 \
     --enable-avx2                                   \
     --disable-static                                \
-    --with-gmp-include=/home/docker/mpfrcxx/i/GMP-${GMP_VERSION}/include \
-    --with-mpfr=/home/docker/mpfrcxx/i/MPFR-${MPFR_VERSION} \
-    --prefix=/home/docker/mpfrcxx/i/FLINT-${VERSION}
+    --with-gmp-include=/home/docker/flintcxx/i/GMP-${GMP_VERSION}/include \
+    --with-mpfr=/home/docker/flintcxx/i/MPFR-${MPFR_VERSION} \
+    --prefix=/home/docker/flintcxx/i/FLINT-${VERSION}
 make -j`nproc`
 make check
 make install
